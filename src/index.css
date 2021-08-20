@@ -5,6 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 1300px;
+  margin: 0 auto;
+  background-image: url('https://images.wallpaperscraft.com/image/ocean_trees_top_view_123059_1080x1920.jpg');
+  /* background-position: center; */
+  background-size: cover;
 }
 
 code {
