@@ -2,8 +2,12 @@ import { Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 const useStyles = makeStyles((theme) => ({
     card: {
-        width: 300,
-        height: 300,
+        marginTop: 10,
+        width: '1200px',
+        height: 350,
+        backgroundColor: '#6ed7826e',
+        borderRadius: 15,
+
     }
 }) )
 const HotelCard = ({item}) => {
@@ -11,14 +15,20 @@ const HotelCard = ({item}) => {
     return (
         <Grid className={classes.card}>
             <Typography>
+                {item.image}
+            </Typography>
+            <Typography>
                 {item.name}
             </Typography>
-            <div>
+            <Typography>
                 {item.price}$
-            </div>
-            <div>
-                {item.image}
-            </div>
+            </Typography>
+            <Typography>
+                {item.des.substring(0, 150)}...
+            </Typography>
+            <Typography>
+                {item.contact}
+            </Typography>
         </Grid>
     );
 };

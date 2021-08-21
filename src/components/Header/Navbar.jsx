@@ -16,7 +16,7 @@ import MoreIcon from '@material-ui/icons/MoreVert';
 import { Button } from '@material-ui/core';
 import { DirectionsBoat, Favorite, Grade } from '@material-ui/icons';
 import './Navbar.css'
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import '../Footer/Footer.css'
 import { BottomNavigation } from '@material-ui/core';
 import { BottomNavigationAction } from '@material-ui/core';
@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
+    textDecoration:'none',
   },
   title: {
     display: 'none',
@@ -225,17 +226,20 @@ export default function PrimarySearchAppBar() {
         </div>
 
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            < DirectionsBoat />
-          </IconButton>
-          <Typography className={classes.title} style={{marginRight: '20px'}} variant="h5" noWrap>
-            DREAM
+          <Link to = "/">
+            <IconButton  
+              edge="start"
+              className={classes.menuButton}
+              color="secondary"
+              aria-label="open drawer"
+            >
+              < DirectionsBoat />
+            
+          <Typography className={classes.title} style={{marginRight: '20px', fontSize: 28}} variant="h5" noWrap>
+          &ensp;DREAM
           </Typography>
+          </IconButton>
+          </Link>
           <Button className='navtext' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 Горящие туры
             </Button>
