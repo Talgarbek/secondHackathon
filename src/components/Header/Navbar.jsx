@@ -14,7 +14,7 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { Button } from '@material-ui/core';
-import { DirectionsBoat, Favorite, Grade } from '@material-ui/icons';
+import { AddBox, CancelScheduleSend, DirectionsBoat, ExitToApp, Favorite, Grade, Send } from '@material-ui/icons';
 import './Navbar.css'
 import { Link, useHistory } from 'react-router-dom';
 import '../Footer/Footer.css'
@@ -25,6 +25,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { AlternateEmail, Home, Phone } from '@material-ui/icons';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -181,20 +182,31 @@ export default function PrimarySearchAppBar() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
-            <Favorite />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+      <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                <SearchIcon />
+                </div>
+                <InputBase
+                placeholder="Search…"
+                classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+                value = {searchVal}
+                onChange = {handleValue}
+                />
+            </div>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+      <Link to="/favorite" style={{color: '#f50057'}}>
+              <IconButton color="inherit">
+                <Badge color="secondary" >
+                  <FavoriteIcon fontSize="large"/>
+                </Badge>
+              </IconButton>
+            </Link>
+        <p>Избранное</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -205,7 +217,7 @@ export default function PrimarySearchAppBar() {
         >
           <AccountCircleIcon />
         </IconButton>
-        <p>Profile</p>
+        <p>Pre</p>
       </MenuItem>
     </Menu>
   );
@@ -225,7 +237,7 @@ export default function PrimarySearchAppBar() {
             </BottomNavigation>
         </div>
 
-        <Toolbar>
+        <Toolbar className="navsec">
           <Link to = "/">
             <IconButton  
               edge="start"
@@ -250,13 +262,21 @@ export default function PrimarySearchAppBar() {
                 open={Boolean(anchorEle)}
                 onClose={handleClose}
                 >
-            <MenuItem onClick={handleClose}>Турция</MenuItem>
-            <MenuItem onClick={handleClose}>О.А.Э</MenuItem>
-            <MenuItem onClick={handleClose}>Египет</MenuItem>
+            <Link to="/detail/4" style={{textDecoration: 'none'}}>
+              <MenuItem onClick={handleClose}>Турция</MenuItem>
+            </Link>
+            <Link to="/detail/16" style={{textDecoration: 'none'}}>
+              <MenuItem onClick={handleClose}>О.А.Э</MenuItem>
+            </Link>
+            <Link to="/detail/5" style={{textDecoration: 'none'}}>
+              <MenuItem onClick={handleClose}>Египет</MenuItem>
+            </Link>
             </Menu>
+            <Link to='/kyrgyzstan' style={{color: 'white', textDecoration:'none'}}>
             <Button className='navtext'>
                 Туры по Кыргызстану
             </Button>
+            </Link>
             <Button className='navtext' aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick2}>
                 Наши услуги
             </Button>
@@ -267,17 +287,22 @@ export default function PrimarySearchAppBar() {
                 open={Boolean(anchorEle2)}
                 onClose={handleClose}
                 >
-            <MenuItem onClick={handleClose2}>Транспортные услуги</MenuItem>
-            <MenuItem onClick={handleClose2}>Свадебные путешествия</MenuItem>
-            <MenuItem onClick={handleClose2}>Раннее бронирование</MenuItem>
+            <Link to='/transfer'>
+              <MenuItem onClick={handleClose2}>Транспортные услуги</MenuItem>
+            </Link>
+            <Link to='/svadba'>
+              <MenuItem onClick={handleClose2}>Свадебные путешествия</MenuItem>
+            </Link>
             </Menu>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 5 new mails" color="inherit">
-              <Badge badgeContent={5} color="secondary">
-                <Grade />
-              </Badge>
-            </IconButton>
+            <Link to="/favorite" style={{color: '#f50057'}}>
+              <IconButton aria-label="show 5 new mails" color="inherit">
+                <Badge color="secondary" >
+                  <FavoriteIcon fontSize="large"/>
+                </Badge>
+              </IconButton>
+            </Link>
             <div className={classes.search}>
                 <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -301,8 +326,17 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircleIcon />
             </IconButton>
+              <Link to='/login' style={{marginTop: 12}}>
+                <Button><Send color='secondary'/></Button>
+              </Link>
+              <Link to='/registration' style={{marginTop: 12}}>
+                <Button><CancelScheduleSend color='danger'/></Button>
+              </Link>
+              <Link  to='/add' style={{marginTop: 14}}>
+                <Button><AddBox/></Button>
+              </Link>
+              
           </div>
           <div className={classes.sectionMobile}>
             <IconButton

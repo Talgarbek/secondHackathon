@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { tourContext } from '../contexty/TourContexts';
 import Edit from '../CRUD/EditTour';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import './Tour.css'
 
 const useStyles = makeStyles({
   root: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles({
 
 
 export default function TourCard({item, history}) {
-  const { deleteTour, editTour, } = useContext(tourContext)
+  const { deleteTour, editTour, addTourInCard, checkTourInFav } = useContext(tourContext)
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -41,7 +43,10 @@ export default function TourCard({item, history}) {
   };
 
   return (
-    <Card className={classes.root}>
+    <div className='cardd'>
+      <Card 
+      className={classes.root}
+    >
       <CardActionArea>
         <CardMedia
           onClick={()=>history.push(`/detail/${item.id}`)}
@@ -66,12 +71,20 @@ export default function TourCard({item, history}) {
           Заказать
         </Button>
         <Button onClick={()=>handleOpen()}>
-                Изменить
-              </Button>
+          Изменить
+        </Button>
         <Button aria-label="share" onClick={() => deleteTour(item.id, history)}>
-              Удалить
-            </Button>
+          Удалить
+        </Button>
+        <Button
+          aria-label="share" 
+          onClick={() => addTourInCard(item)}
+          color={checkTourInFav(item.id) ? "secondary" : "light"}
+          >
+           <FavoriteIcon/>
+        </Button>
       </CardActions>
     </Card>
+    </div>
   );
 }

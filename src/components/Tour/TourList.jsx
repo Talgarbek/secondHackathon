@@ -42,7 +42,7 @@ const TourList = () => {
                         tours.map((item, index) => (
                             <TourCard item={item} key={index} history={history} />
                         ))
-                    ) : (<h1>Wait mzfk...</h1>)
+                    ) : (<h1>Wait...</h1>)
                 }
             </Grid>
             <div style={{display: 'flex', justifyContent: 'center'}}>

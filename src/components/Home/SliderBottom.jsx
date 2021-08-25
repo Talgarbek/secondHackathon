@@ -48,6 +48,7 @@ const App = () => {
       activeColor='#dcf4fd'
       imageHeight='350px'
       imageWidth='500px'
+      className='bottomSlider'
     />
   )
 }

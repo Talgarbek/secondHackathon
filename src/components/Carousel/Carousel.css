@@ -1,3 +1,51 @@
 .slidetext{
     color: floralwhite;
 }
+@media all and (max-width: 1300px){
+    .carousel{
+        width: 1200px;
+    }
+}
+@media all and (max-width: 1200px){
+    .carousel{
+        width: 1100px;
+    }
+}
+@media all and (max-width: 1100px){
+    .carousel{
+        width: 1000px;
+    }
+}
+@media all and (max-width: 1000px){
+    .carousel{
+        width: 900px;
+    }
+}
+@media all and (max-width: 900px){
+    .carousel{
+        width: 800px;
+    }
+}
+@media all and (max-width: 800px){
+    .carousel{
+        width: 700px;
+    }
+}
+@media all and (max-width: 700px){
+    .carousel{
+        width: 600px;
+        margin-top: 15px
+    }
+}
+@media all and (max-width: 600px){
+    .carousel{
+        width: 500px;
+        margin-top: 15px
+    }
+}
+@media all and (max-width: 500px){
+    .carousel{
+        width: 400px;
+        margin-top: 15px
+    }
+}

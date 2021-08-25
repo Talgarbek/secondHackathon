@@ -1,36 +1,35 @@
-import { Grid, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-const useStyles = makeStyles((theme) => ({
-    card: {
-        marginTop: 10,
-        width: '1200px',
-        height: 350,
-        backgroundColor: '#6ed7826e',
-        borderRadius: 15,
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import { TableCell, TableRow } from '@material-ui/core';
+import './Detail.css'
 
-    }
-}) )
-const HotelCard = ({item}) => {
-    const classes = useStyles()
-    return (
-        <Grid className={classes.card}>
-            <Typography>
-                {item.image}
-            </Typography>
-            <Typography>
-                {item.name}
-            </Typography>
-            <Typography>
-                {item.price}$
-            </Typography>
-            <Typography>
-                {item.des.substring(0, 150)}...
-            </Typography>
-            <Typography>
-                {item.contact}
-            </Typography>
-        </Grid>
-    );
-};
+const useStyles = makeStyles({
+  root: {
+      backgroundColor: '#2063d4a3',
+      color: '#f9fafb',
+      fontSize: 18,
+      display: 'inline-block',
+  },
+  price: {
+      fontSize: 24,
+  },
+  des: {
+      fontSize: 16
+  },
+});
 
-export default HotelCard;
+export default function HotelCard({item}) {
+  const classes = useStyles();
+
+  return (
+    <TableRow key={item.id} className={classes.root}>
+        <div className="foto"><TableCell><img className="foto" src={item.image} /></TableCell></div>
+        <div className="nameprice"><TableCell style={{fontSize:'26px'}} align="right">Название: {item.name}</TableCell>
+        <TableCell className={classes.price} align="right">Цена: {item.price}$</TableCell></div>
+        <span><TableCell className={classes.des} align="right">{item.description}</TableCell></span>
+        <div className='contact'><TableCell style={{fontSize:"22px"}} align="right">Адрес:  {item.contact}</TableCell></div>
+        <div className='button'><Button className='knopka'>Заказать</Button></div>
+    </TableRow>
+  );
+}

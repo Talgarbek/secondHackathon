@@ -1,3 +1,122 @@
-.App{
-    /* display: flex; */
+.detail {
+    background-color: #41cadd2e;
+    color: white;
+    margin-top: 100px
+}
+.MuiTableRow-root{
+    display:inline-block
+}
+.foto{
+    margin-left: 200px;
+    margin-bottom: 40px;
+    width: 500px !important;
+    height: 400px !important;
+}
+.nameprice{
+    display: flex;
+    justify-content: space-around;
+    background-color:#e63b3be6
+}
+.knopka{
+    background-color: blue !important;
+    color: wheat !important;
+}
+.button{
+    display: flex;
+    justify-content: center
+}
+.contact{
+    display: flex;
+    justify-content:center;
+}
+
+@media all and (max-width: 1200px){
+    .detail{
+        width: 1100px !important
+    }
+    .foto{
+        margin-left:150px
+    }
+}
+@media all and (max-width: 1000px){
+    .detail{
+        width: 900px !important
+    }
+    .foto{
+        margin-left:85px
+    }
+}
+@media all and (max-width: 900px){
+    .detail{
+        width: 800px !important
+    }
+    .MuiTableRow-root{
+        width: 800px !important
+    }
+    .foto{
+        margin-left: 60px
+    }
+}
+@media all and (max-width: 800px){
+    .detail{
+        width: 700px !important
+    }
+    .MuiTableRow-root{
+        width: 700px !important
+    }
+    .foto{
+        margin-left:40px
+    }
+}
+@media all and (max-width: 700px){
+    .detail{
+        width: 600px !important
+    }
+    .MuiTableRow-root{
+        width: 600px !important
+    }
+    .foto{
+        width: 550px !important;
+        margin-left: 20px !important
+    }
+    
+}
+@media all and (max-width: 600px){
+    .detail{
+        width: 500px !important
+    }
+    .MuiTableRow-root{
+        width: 500px !important
+    }
+    .name{
+        width: 80px !important
+    }
+    .foto{
+        width: 430px !important;
+        margin-left: 10px !important
+    }
+}
+@media all and (max-width: 500px){
+    .detail{
+        width: 400px !important
+    }
+    .MuiTableRow-root{
+        width: 400px !important;
+    }
+    .foto{
+        width: 330px !important;
+        height: 280px !important;
+    }
+}
+@media all and (max-width: 400px){
+    .detail{
+        width: 300px !important
+    }
+    .MuiTableRow-root{
+        width: 300px !important;
+    }
+    .foto{
+        width: 230px !important;
+        height: 180px !important;
+    }
 }

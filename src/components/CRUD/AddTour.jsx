@@ -27,7 +27,8 @@ const Add = () => {
         title: '',
         price: '',
         description: '',
-        hotels: []
+        hotels: [],
+        comments: [],
     })
 
     const { addTour } = useContext(tourContext)

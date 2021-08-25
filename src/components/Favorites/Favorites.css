@@ -1,0 +1,72 @@
+.fotka{
+    width: 300px !important
+}
+
+@media all and (max-width: 1050px){
+    .makeStyles-paper-55{
+        width: 1000px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 1000px){
+    .makeStyles-paper-55{
+        width: 900px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 900px){
+    .makeStyles-paper-55{
+        width: 800px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 800px){
+    .makeStyles-paper-55{
+        width: 700px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 700px){
+    .makeStyles-paper-55{
+        width: 560px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+    .fotka{
+        width: 100px !important;
+        height: 100px !important
+    }
+}
+@media all and (max-width: 600px){
+    .makeStyles-paper-55{
+        width: 500px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 500px){
+    .makeStyles-paper-55{
+        width: 400px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
+@media all and (max-width: 400px){
+    .makeStyles-paper-55{
+        width: 300px !important;
+    }
+    .MuiTable-root{
+        width:100% !important;
+    }
+}
